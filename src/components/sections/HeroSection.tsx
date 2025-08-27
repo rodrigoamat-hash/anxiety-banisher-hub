@@ -16,9 +16,9 @@ export const HeroSection = ({ spacesLeft, onCTAClick }: HeroSectionProps) => {
   };
 
   return (
-    <section className="relative bg-gradient-hero text-primary-foreground pt-20 pb-16 overflow-hidden">
+    <section className="relative bg-gradient-hero text-foreground pt-20 pb-16 overflow-hidden">
       {/* Background Image Overlay */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-5">
         <img 
           src={heroImage} 
           alt="Peaceful meditation scene representing anxiety relief"
@@ -27,45 +27,61 @@ export const HeroSection = ({ spacesLeft, onCTAClick }: HeroSectionProps) => {
       </div>
       
       <div className="container mx-auto px-6 relative z-10 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-          🚨 MÉTODO COMPROBADO PARA VENCER LA ANSIEDAD
+        <div className="mb-4">
+          <span className="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+            ✨ Método Científicamente Validado
+          </span>
+        </div>
+        
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 text-primary">
+          Método Comprobado para<br />Vencer la Ansiedad
         </h1>
-        <p className="text-xl md:text-2xl mb-8 text-primary-glow">
-          {spacesLeft} espacios restantes esta semana - La ansiedad no puede esperar
+        <p className="text-xl md:text-2xl mb-8 text-muted-foreground max-w-3xl mx-auto">
+          Recupera el control de tu vida con técnicas científicamente probadas 
+          que han ayudado a más de 1,000 personas a superar la ansiedad
         </p>
         
-        <div className="bg-urgent/90 backdrop-blur-sm rounded-2xl p-8 max-w-3xl mx-auto mb-8 border-2 border-urgent-foreground shadow-urgent">
-          <h3 className="text-2xl font-bold mb-4">🚨 CADA DÍA QUE ESPERAS, LA ANSIEDAD SE FORTALECE</h3>
-          <div className="bg-warning text-warning-foreground rounded-xl p-6 mb-4">
-            <div className="space-y-2 text-left max-w-2xl mx-auto">
-              <p>❌ Otra noche sin dormir por pensamientos acelerados</p>
-              <p>❌ Otro ataque de pánico que podrías haber evitado</p>
-              <p>❌ Otra oportunidad social o laboral perdida por miedo</p>
-              <p>❌ Otro día viviendo con síntomas físicos que te debilitan</p>
+        <div className="bg-card border border-border rounded-2xl p-8 max-w-4xl mx-auto mb-8 shadow-card">
+          <h3 className="text-2xl font-semibold mb-6 text-primary">¿Te identificas con alguna de estas situaciones?</h3>
+          <div className="grid md:grid-cols-2 gap-4 text-left">
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-urgent rounded-full mt-2 flex-shrink-0"></div>
+              <p className="text-muted-foreground">Noches sin dormir por pensamientos acelerados</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-urgent rounded-full mt-2 flex-shrink-0"></div>
+              <p className="text-muted-foreground">Ataques de pánico inesperados e incontrolables</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-urgent rounded-full mt-2 flex-shrink-0"></div>
+              <p className="text-muted-foreground">Evitar situaciones sociales o laborales por miedo</p>
+            </div>
+            <div className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-urgent rounded-full mt-2 flex-shrink-0"></div>
+              <p className="text-muted-foreground">Síntomas físicos que limitan tu día a día</p>
             </div>
           </div>
-          <p className="text-xl font-medium">⏰ La ansiedad no espera... ¿Por qué tú sí?</p>
         </div>
         
-        <div className="bg-success text-success-foreground px-8 py-4 rounded-full text-xl font-bold inline-block mb-6 animate-blink shadow-card">
-          🔒 QUEDAN {spacesLeft} ESPACIOS ESTA SEMANA
+        <div className="bg-success/10 border border-success/20 text-success-foreground px-6 py-3 rounded-full text-lg font-medium inline-block mb-6">
+          🔒 Acceso limitado: {spacesLeft} espacios disponibles esta semana
         </div>
         
-        <p className="text-lg mb-8 max-w-2xl mx-auto">
-          *Por responsabilidad profesional, limitamos el acceso a 50 personas por semana para garantizar seguimiento personalizado*
+        <p className="text-base mb-8 max-w-2xl mx-auto text-muted-foreground">
+          Por responsabilidad profesional, limitamos el acceso para garantizar seguimiento personalizado y resultados efectivos
         </p>
         
-        <div className="text-3xl md:text-5xl font-bold mb-8">
-          ⏰ TU DESCUENTO TERMINA EN: <CountdownTimer size="lg" className="text-urgent-glow" />
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+          <button
+            onClick={handleCTAClick}
+            className="bg-primary text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg shadow-primary hover-lift transition-all duration-300"
+          >
+            Acceder al Método Ahora - $12
+          </button>
+          <div className="text-muted-foreground">
+            <CountdownTimer size="sm" className="text-urgent" />
+          </div>
         </div>
-        
-        <button
-          onClick={handleCTAClick}
-          className="bg-gradient-urgent text-urgent-foreground px-8 py-6 text-xl md:text-2xl font-bold rounded-full shadow-urgent animate-pulse-urgent hover-lift transition-all duration-300"
-        >
-          🔥 TERMINAR CON MI ANSIEDAD AHORA - $12<br />
-          <small className="text-base">⏰ Solo {spacesLeft} espacios restantes</small>
-        </button>
       </div>
     </section>
   );

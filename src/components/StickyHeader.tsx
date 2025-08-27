@@ -32,10 +32,18 @@ export const StickyHeader = ({ spacesLeft, onTimerUpdate }: StickyHeaderProps) =
   }, [onTimerUpdate]);
 
   return (
-    <div className="fixed top-0 w-full bg-gradient-urgent text-urgent-foreground text-center py-3 z-50 shadow-urgent animate-pulse-urgent">
-      <div className="font-bold text-lg">
-        🔥 QUEDAN {spacesLeft} ESPACIOS | ⏰ {timeLeft} | 75% OFF
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
+      <div className="container mx-auto px-6 py-3">
+        <div className="flex items-center justify-between">
+          <div className="text-sm font-medium text-primary">
+            Método Ansiedad
+          </div>
+          <div className="flex items-center gap-4 text-sm text-muted-foreground">
+            <span>{spacesLeft} espacios disponibles</span>
+            <span>⏰ {timeLeft}</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
   );
 };

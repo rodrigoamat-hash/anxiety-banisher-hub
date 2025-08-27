@@ -16,14 +16,10 @@ export const FloatingCTA = ({ onClick }: FloatingCTAProps) => {
   return (
     <button
       onClick={handleClick}
-      className="fixed bottom-6 right-6 bg-gradient-urgent text-urgent-foreground px-6 py-4 rounded-full font-bold shadow-urgent z-40 animate-bounce-soft hover-lift"
+      className="fixed bottom-6 right-6 bg-primary text-primary-foreground px-6 py-4 rounded-lg shadow-float hover-lift font-semibold text-center border border-border z-40"
     >
-      <div className="text-center">
-        <div>🚨 $12 AHORA</div>
-        <div className="text-xs mt-1">
-          ⏰ <CountdownTimer size="sm" />
-        </div>
-      </div>
+      <div>Acceder Ahora</div>
+      <div className="text-sm opacity-90">$12</div>
     </button>
   );
 };

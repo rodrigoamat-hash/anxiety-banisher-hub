@@ -18,23 +18,26 @@ const problems = [
 
 export const ProblemsSection = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl md:text-5xl font-bold text-center mb-12 text-foreground">
-          Seamos honestos... ¿cuántas veces ya has vivido esto?
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">
+          ¿Te identificas con estas situaciones?
         </h2>
+        <p className="text-xl text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
+          Miles de personas experimentan estos síntomas diariamente. No estás solo en esta lucha.
+        </p>
         
-        <div className="max-w-4xl mx-auto space-y-6">
+        <div className="max-w-4xl mx-auto grid gap-8 md:grid-cols-3">
           {problems.map((problem, index) => (
             <div
               key={index}
-              className="bg-muted/50 border-l-4 border-urgent rounded-lg p-8 shadow-card hover-lift"
+              className="bg-card border border-border rounded-xl p-8 shadow-card hover-lift text-center"
             >
-              <h3 className="text-2xl font-bold text-urgent mb-4 flex items-center">
-                <span className="mr-3 text-3xl">{problem.icon}</span>
+              <div className="text-4xl mb-4">{problem.icon}</div>
+              <h3 className="text-xl font-semibold text-primary mb-4">
                 {problem.title}
               </h3>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed">
                 {problem.description}
               </p>
             </div>
@@ -42,8 +45,11 @@ export const ProblemsSection = () => {
         </div>
         
         <div className="mt-12 text-center">
-          <div className="bg-urgent text-urgent-foreground px-8 py-4 rounded-xl max-w-3xl mx-auto font-bold text-lg animate-pulse-urgent">
-            ⚠️ VENTANA DE OPORTUNIDAD NEUROLÓGICA: Cada hora que postpongas, tu cerebro se adapta más al patrón ansioso
+          <div className="bg-warning/10 border border-warning/20 text-warning-foreground px-8 py-6 rounded-xl max-w-3xl mx-auto">
+            <p className="font-medium">
+              <strong>Importante:</strong> Cuanto antes actúes, más efectivo será el tratamiento. 
+              La ansiedad tiende a reforzarse con el tiempo si no se aborda adecuadamente.
+            </p>
           </div>
         </div>
       </div>
