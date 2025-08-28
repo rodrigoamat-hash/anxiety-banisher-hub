@@ -7,92 +7,98 @@ interface PricingSectionProps {
 
 export const PricingSection = ({ spacesLeft, onPurchaseClick }: PricingSectionProps) => {
   return (
-    <section id="pricing" className="py-20 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">
-            Accede al Método Completo
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            Oferta especial para los primeros usuarios
-          </p>
+    <section id="pricing" className="py-20 bg-gradient-hero text-white relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-10 left-20 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-10 right-20 w-96 h-96 bg-primary-glow/20 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
+      </div>
+      
+      <div className="container mx-auto px-6 text-center relative z-10">
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 animate-fade-in-up">
+          🚨 PRECIO ESPECIAL TERMINA EN:
+        </h2>
+        <div className="mb-12 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+          <CountdownTimer size="lg" className="text-white bg-urgent/20 backdrop-blur-sm px-6 py-4 rounded-2xl border border-urgent/30" />
         </div>
         
-        <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-muted/30 rounded-xl p-8">
-            <h3 className="text-2xl font-semibold mb-4 text-primary">¿Por qué este precio especial?</h3>
-            <p className="text-muted-foreground mb-6">
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 mb-12">
+          <div className="bg-white/10 backdrop-blur-md rounded-3xl p-10 hover-lift animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+            <h3 className="text-2xl font-semibold mb-6 text-white">¿Por qué este precio especial?</h3>
+            <p className="text-white/90 mb-8 text-lg leading-relaxed">
               Estamos recopilando casos de éxito para nuestro próximo estudio científico 
               sobre la efectividad del método. Por eso ofrecemos acceso con descuento.
             </p>
             
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-success rounded-full"></div>
-                <span>75% descuento de investigación</span>
+            <div className="space-y-4">
+              <div className="flex items-center gap-4 hover-scale transition-all duration-300">
+                <div className="w-3 h-3 bg-success rounded-full animate-pulse-glow"></div>
+                <span className="text-white">75% descuento de investigación</span>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-success rounded-full"></div>
-                <span>Seguimiento personalizado incluido</span>
+              <div className="flex items-center gap-4 hover-scale transition-all duration-300">
+                <div className="w-3 h-3 bg-success rounded-full animate-pulse-glow" style={{animationDelay: '0.5s'}}></div>
+                <span className="text-white">Seguimiento personalizado incluido</span>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-success rounded-full"></div>
-                <span>Actualizaciones futuras gratuitas</span>
+              <div className="flex items-center gap-4 hover-scale transition-all duration-300">
+                <div className="w-3 h-3 bg-success rounded-full animate-pulse-glow" style={{animationDelay: '1s'}}></div>
+                <span className="text-white">Actualizaciones futuras gratuitas</span>
               </div>
             </div>
           </div>
           
-          <div className="bg-card border border-border rounded-xl p-8 shadow-card">
-            <div className="text-center mb-6">
-              <div className="bg-success/10 text-success px-4 py-2 rounded-full text-sm font-medium inline-block mb-4">
-                Oferta Especial de Investigación
+          <div className="bg-white text-foreground rounded-3xl p-10 shadow-float border border-white/20 hover-lift hover-glow animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+            <div className="text-center mb-8">
+              <div className="bg-gradient-urgent text-white px-6 py-3 rounded-full text-lg font-bold inline-block mb-6 animate-bounce-soft">
+                75% OFF - OFERTA LIMITADA
               </div>
-              <div className="text-muted-foreground line-through text-lg">
+              <div className="text-xl text-muted-foreground line-through mb-3">
                 Precio regular: $47
               </div>
-              <div className="text-primary text-4xl font-bold">$12</div>
+              <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent mb-6">
+                $12
+              </div>
             </div>
             
-            <h4 className="text-xl font-semibold mb-4 text-center text-primary">Incluye:</h4>
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-start gap-3">
-                <span className="text-success mt-1">✓</span>
-                <span>Guía completa paso a paso</span>
+            <h4 className="text-2xl font-bold mb-6 text-center text-primary">Incluye:</h4>
+            <ul className="space-y-4 mb-10">
+              <li className="flex items-center gap-4 hover-scale transition-all duration-300">
+                <span className="text-success text-xl font-bold">✓</span>
+                <span className="text-lg">Guía completa paso a paso</span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="text-success mt-1">✓</span>
-                <span>Técnicas de respiración y relajación</span>
+              <li className="flex items-center gap-4 hover-scale transition-all duration-300">
+                <span className="text-success text-xl font-bold">✓</span>
+                <span className="text-lg">Técnicas de respiración y relajación</span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="text-success mt-1">✓</span>
-                <span>Manejo de pensamientos intrusivos</span>
+              <li className="flex items-center gap-4 hover-scale transition-all duration-300">
+                <span className="text-success text-xl font-bold">✓</span>
+                <span className="text-lg">Manejo de pensamientos intrusivos</span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="text-success mt-1">✓</span>
-                <span>Rutinas diarias anti-ansiedad</span>
+              <li className="flex items-center gap-4 hover-scale transition-all duration-300">
+                <span className="text-success text-xl font-bold">✓</span>
+                <span className="text-lg">Rutinas diarias anti-ansiedad</span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="text-success mt-1">✓</span>
-                <span>3 bonos adicionales (valor $45)</span>
+              <li className="flex items-center gap-4 hover-scale transition-all duration-300">
+                <span className="text-success text-xl font-bold">✓</span>
+                <span className="text-lg">3 bonos adicionales (valor $45)</span>
               </li>
-              <li className="flex items-start gap-3">
-                <span className="text-success mt-1">✓</span>
-                <span>Garantía de satisfacción 7 días</span>
+              <li className="flex items-center gap-4 hover-scale transition-all duration-300">
+                <span className="text-success text-xl font-bold">✓</span>
+                <span className="text-lg">Garantía de satisfacción 7 días</span>
               </li>
             </ul>
             
-            <div className="bg-warning/10 border border-warning/20 text-warning-foreground px-4 py-3 rounded-lg mb-6 text-center">
+            <div className="bg-warning/20 backdrop-blur-sm border border-warning/30 text-warning-foreground px-6 py-4 rounded-2xl mb-8 text-center animate-bounce-soft">
               Solo {spacesLeft} espacios disponibles esta semana
             </div>
             
             <button
               onClick={onPurchaseClick}
-              className="w-full bg-primary text-primary-foreground py-4 px-6 text-lg font-semibold rounded-lg shadow-primary hover-lift transition-all duration-300"
+              className="w-full bg-gradient-primary text-white py-5 px-8 text-xl font-bold rounded-2xl shadow-primary hover-lift hover-glow transition-all duration-300 transform hover:scale-105"
             >
               Acceder al Método - $12
             </button>
             
-            <p className="text-xs text-muted-foreground text-center mt-4">
+            <p className="text-sm text-muted-foreground text-center mt-6">
               Acceso inmediato tras la confirmación del pago
             </p>
           </div>

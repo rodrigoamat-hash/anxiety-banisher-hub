@@ -32,15 +32,19 @@ export const StickyHeader = ({ spacesLeft, onTimerUpdate }: StickyHeaderProps) =
   }, [onTimerUpdate]);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border shadow-sm">
-      <div className="container mx-auto px-6 py-3">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border shadow-primary">
+      <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-sm font-medium text-primary">
+          <div className="text-lg font-bold bg-gradient-to-r from-primary to-primary-glow bg-clip-text text-transparent">
             Método Ansiedad
           </div>
-          <div className="flex items-center gap-4 text-sm text-muted-foreground">
-            <span>{spacesLeft} espacios disponibles</span>
-            <span>⏰ {timeLeft}</span>
+          <div className="flex items-center gap-6 text-sm">
+            <span className="bg-success/20 text-success-foreground px-3 py-1 rounded-full font-medium hover-scale transition-all duration-300">
+              {spacesLeft} espacios disponibles
+            </span>
+            <span className="bg-urgent/20 text-urgent-foreground px-3 py-1 rounded-full font-medium animate-pulse-glow">
+              ⏰ {timeLeft}
+            </span>
           </div>
         </div>
       </div>
