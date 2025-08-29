@@ -2,10 +2,18 @@ import { useState, useEffect } from 'react';
 import { StickyHeader } from '@/components/StickyHeader';
 import { HeroSection } from '@/components/sections/HeroSection';
 import { ActivityFeed } from '@/components/ActivityFeed';
-import { ProblemsSection } from '@/components/sections/ProblemsSection';
-import { SolutionSection } from '@/components/sections/SolutionSection';
+import { PainSection } from '@/components/sections/PainSection';
+import { HopeTransitionSection } from '@/components/sections/HopeTransitionSection';
+import { SolutionPresentationSection } from '@/components/sections/SolutionPresentationSection';
+import { ThreeBenefitsSection } from '@/components/sections/ThreeBenefitsSection';
+import { ScientificValidationSection } from '@/components/sections/ScientificValidationSection';
+import { ThreeStepsProcessSection } from '@/components/sections/ThreeStepsProcessSection';
 import { TestimonialsSection } from '@/components/sections/TestimonialsSection';
+import { ContentSpecificSection } from '@/components/sections/ContentSpecificSection';
 import { PricingSection } from '@/components/sections/PricingSection';
+import { BonusesSection } from '@/components/sections/BonusesSection';
+import { ProfessionalBackingSection } from '@/components/sections/ProfessionalBackingSection';
+import { FinalFooterSection } from '@/components/sections/FinalFooterSection';
 import { FloatingCTA } from '@/components/FloatingCTA';
 import { ExitIntentModal } from '@/components/ExitIntentModal';
 
@@ -62,13 +70,21 @@ const Index = () => {
           </div>
         </section>
         
-        <ProblemsSection />
-        <SolutionSection />
+        <PainSection />
+        <HopeTransitionSection />
+        <SolutionPresentationSection />
+        <ThreeBenefitsSection />
+        <ScientificValidationSection />
+        <ThreeStepsProcessSection />
         <TestimonialsSection />
+        <ContentSpecificSection />
         <PricingSection 
           spacesLeft={spacesLeft}
           onPurchaseClick={handlePurchaseClick}
         />
+        <BonusesSection />
+        <ProfessionalBackingSection />
+        <FinalFooterSection onPurchaseClick={handlePurchaseClick} />
       </main>
 
       <FloatingCTA onClick={handlePurchaseClick} />

@@ -1,5 +1,4 @@
 import { CountdownTimer } from '../CountdownTimer';
-import heroImage from '@/assets/hero-anxiety-relief.jpg';
 
 interface HeroSectionProps {
   spacesLeft: number;
@@ -16,77 +15,62 @@ export const HeroSection = ({ spacesLeft, onCTAClick }: HeroSectionProps) => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-accent/30 to-background">
-      {/* Premium floating elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-gradient-to-r from-primary/20 to-primary-glow/20 rounded-full blur-3xl floating"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-gradient-to-r from-primary-glow/15 to-primary/15 rounded-full blur-3xl floating" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-primary/5 to-primary-glow/5 rounded-full blur-3xl floating" style={{animationDelay: '4s'}}></div>
-      </div>
+    <section className="bg-gradient-primary text-white py-20 lg:py-32 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary-glow opacity-90"></div>
       
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-6xl mx-auto text-center">
-          {/* Badge */}
-          <div className="mb-8 bounce-in">
-            <span className="inline-flex items-center glass-effect px-6 py-3 text-sm font-medium text-primary border hover-glow transition-all duration-500 rounded-full">
-              ✨ Método Científicamente Validado
+      <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="max-w-5xl mx-auto">
+          {/* Pre-headline */}
+          <div className="mb-8">
+            <span className="inline-block bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full text-lg font-semibold border border-white/30">
+              MÉTODO COMPROBADO
             </span>
           </div>
           
-          {/* Main Headline */}
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black mb-8 leading-tight bounce-in" style={{animationDelay: '0.2s'}}>
-            <span className="text-foreground">Método Comprobado</span>
+          {/* Main headline */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight">
+            Descubre un Método Simplificado para Vencer la
             <br />
-            <span className="gradient-text">para Vencer la</span>
+            <span className="text-yellow-300">ANSIEDAD</span>
             <br />
-            <span className="text-primary">ANSIEDAD</span>
+            <span className="text-2xl md:text-3xl lg:text-4xl font-normal text-white/90 block mt-4">
+              y los tormentos que esta enfermedad provoca en tu vida
+            </span>
           </h1>
           
-          {/* Subtitle */}
-          <p className="text-xl md:text-2xl lg:text-3xl mb-12 text-muted-foreground max-w-4xl mx-auto leading-relaxed bounce-in font-light" style={{animationDelay: '0.4s'}}>
-            Recupera el control de tu vida con técnicas científicamente probadas 
-            que han ayudado a más de <span className="text-primary font-semibold">1,000 personas</span> a superar la ansiedad
+          {/* Subheadline */}
+          <p className="text-xl md:text-2xl mb-12 text-white/90 max-w-4xl mx-auto leading-relaxed">
+            Miles de personas han transformado sus vidas. Técnicas científicamente probadas 
+            que realmente funcionan.
           </p>
           
-          {/* Problem indicators */}
-          <div className="glass-effect rounded-3xl p-8 md:p-12 max-w-5xl mx-auto mb-12 hover-lift bounce-in" style={{animationDelay: '0.6s'}}>
-            <h3 className="text-2xl md:text-3xl font-bold mb-8 text-foreground">¿Te identificas con alguna de estas situaciones?</h3>
-            <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-              {[
-                "Noches sin dormir por pensamientos acelerados",
-                "Ataques de pánico inesperados e incontrolables", 
-                "Evitar situaciones sociales o laborales por miedo",
-                "Síntomas físicos que limitan tu día a día"
-              ].map((problem, index) => (
-                <div key={index} className="flex items-start gap-4 hover-scale transition-all duration-500" style={{animationDelay: `${0.8 + index * 0.1}s`}}>
-                  <div className="w-4 h-4 bg-urgent rounded-full mt-1 flex-shrink-0 animate-pulse-glow" style={{animationDelay: `${index * 0.3}s`}}></div>
-                  <p className="text-muted-foreground text-lg font-medium text-left">{problem}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          {/* Scarcity indicator */}
-          <div className="glass-effect border border-success/30 text-foreground px-8 py-6 rounded-2xl text-lg font-semibold inline-block mb-8 hover-glow bounce-in" style={{animationDelay: '1s'}}>
-            <span className="text-success">🔒</span> Acceso limitado: <span className="text-primary font-bold">{spacesLeft} espacios</span> disponibles esta semana
-          </div>
-          
-          <p className="text-muted-foreground mb-12 max-w-3xl mx-auto text-lg bounce-in" style={{animationDelay: '1.2s'}}>
-            Por responsabilidad profesional, limitamos el acceso para garantizar seguimiento personalizado y resultados efectivos
-          </p>
-          
-          {/* CTA Section */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center bounce-in" style={{animationDelay: '1.4s'}}>
+          {/* CTA Button */}
+          <div className="mb-8">
             <button
               onClick={handleCTAClick}
-              className="group relative px-12 py-6 text-xl font-bold rounded-2xl shadow-primary hover-lift hover-glow transition-all duration-500 transform hover:scale-105 bg-gradient-primary text-primary-foreground overflow-hidden"
+              className="bg-white text-primary px-12 py-6 text-xl md:text-2xl font-bold rounded-lg shadow-float hover:shadow-glow transition-all duration-300 transform hover:scale-105 hover:bg-gray-50"
             >
-              <span className="relative z-10">Acceder al Método Ahora - $12</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary-glow to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              VENCER MI ANSIEDAD - $12
             </button>
-            <div className="glass-effect border border-urgent/30 px-6 py-3 rounded-xl">
-              <CountdownTimer size="sm" className="text-foreground font-semibold" />
-            </div>
+          </div>
+          
+          {/* Trust indicators */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 text-white/80">
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
+              Método Paso a Paso
+            </span>
+            <span className="hidden sm:block">•</span>
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
+              Acceso Instantáneo
+            </span>
+            <span className="hidden sm:block">•</span>
+            <span className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
+              Profesionales Calificados
+            </span>
           </div>
         </div>
       </div>

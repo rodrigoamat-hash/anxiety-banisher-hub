@@ -7,62 +7,62 @@ All colors MUST be HSL.
 */
 
 @layer base {
-  /* Ultra-clean design system inspired by premium brands */
+  /* Paleta de colores de alta conversión */
   :root {
     --background: 255 255 255;
-    --foreground: 30 41 59;
+    --foreground: 44 62 80;
     --card: 255 255 255;
-    --card-foreground: 30 41 59;
+    --card-foreground: 44 62 80;
     --popover: 255 255 255;
-    --popover-foreground: 30 41 59;
-    --primary: 59 130 246;
+    --popover-foreground: 44 62 80;
+    --primary: 52 152 219;
     --primary-foreground: 255 255 255;
-    --primary-glow: 147 197 253;
-    --secondary: 248 250 252;
-    --secondary-foreground: 71 85 105;
-    --muted: 248 250 252;
-    --muted-foreground: 100 116 139;
-    --accent: 245 246 250;
-    --accent-foreground: 30 41 59;
-    --destructive: 239 68 68;
+    --primary-glow: 52 152 219;
+    --secondary: 248 249 250;
+    --secondary-foreground: 44 62 80;
+    --muted: 248 249 250;
+    --muted-foreground: 127 140 141;
+    --accent: 248 249 250;
+    --accent-foreground: 44 62 80;
+    --destructive: 231 76 60;
     --destructive-foreground: 255 255 255;
-    --border: 241 245 249;
-    --input: 241 245 249;
-    --ring: 59 130 246;
-    --radius: 0.75rem;
-    --urgent: 239 68 68;
+    --border: 236 240 241;
+    --input: 236 240 241;
+    --ring: 52 152 219;
+    --radius: 0.5rem;
+    --urgent: 243 156 18;
     --urgent-foreground: 255 255 255;
-    --urgent-glow: 248 113 113;
-    --success: 16 185 129;
+    --urgent-glow: 243 156 18;
+    --success: 39 174 96;
     --success-foreground: 255 255 255;
-    --warning: 245 158 11;
+    --warning: 243 156 18;
     --warning-foreground: 255 255 255;
     
-    /* Sophisticated gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(213 94% 68%), hsl(213 97% 87%));
-    --gradient-hero: linear-gradient(135deg, hsl(213 94% 68%) 0%, hsl(221 83% 53%) 100%);
-    --gradient-success: linear-gradient(135deg, hsl(166 76% 42%), hsl(158 64% 52%));
-    --gradient-urgent: linear-gradient(135deg, hsl(0 84% 60%), hsl(0 91% 71%));
-    --gradient-subtle: linear-gradient(135deg, hsl(220 14% 96%), hsl(220 13% 91%));
+    /* Gradientes de conversión */
+    --gradient-primary: linear-gradient(135deg, hsl(204 70% 53%), hsl(204 70% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(204 70% 53%) 0%, hsl(204 70% 45%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(145 63% 42%), hsl(145 63% 35%));
+    --gradient-urgent: linear-gradient(135deg, hsl(35 84% 62%), hsl(35 84% 55%));
+    --gradient-subtle: linear-gradient(135deg, hsl(210 14% 97%), hsl(210 17% 95%));
     
-    /* Premium shadows */
-    --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.05), 0 1px 2px -1px hsl(0 0% 0% / 0.05);
-    --shadow-float: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.05);
-    --shadow-primary: 0 10px 25px -5px hsl(213 94% 68% / 0.25);
-    --shadow-glow: 0 0 40px hsl(213 97% 87% / 0.3);
+    /* Sombras profesionales */
+    --shadow-card: 0 2px 4px 0 hsl(0 0% 0% / 0.1);
+    --shadow-float: 0 10px 20px -5px hsl(0 0% 0% / 0.15);
+    --shadow-primary: 0 8px 25px -8px hsl(204 70% 53% / 0.4);
+    --shadow-glow: 0 0 30px hsl(204 70% 53% / 0.3);
     
-    /* Smooth animations */
-    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Transiciones suaves */
+    --transition-smooth: all 0.3s ease;
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 255 255 255;
-    --sidebar-foreground: 30 41 59;
-    --sidebar-primary: 59 130 246;
+    --sidebar-foreground: 44 62 80;
+    --sidebar-primary: 52 152 219;
     --sidebar-primary-foreground: 255 255 255;
-    --sidebar-accent: 248 250 252;
-    --sidebar-accent-foreground: 71 85 105;
-    --sidebar-border: 241 245 249;
-    --sidebar-ring: 59 130 246;
+    --sidebar-accent: 248 249 250;
+    --sidebar-accent-foreground: 44 62 80;
+    --sidebar-border: 236 240 241;
+    --sidebar-ring: 52 152 219;
   }
 
   .dark {
