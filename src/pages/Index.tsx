@@ -54,7 +54,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-bg">
       <StickyHeader spacesLeft={spacesLeft} />
       
       <main>
